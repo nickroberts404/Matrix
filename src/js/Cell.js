@@ -1,8 +1,16 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react';
 
 export default class Cell extends Component {
 	render() {
-		return <p>Welcome to Neptune</p>
+		var {style, getColor, data, onClick} = this.props;
+		style.backgroundColor = getColor(data);
+		return (
+			<div 
+				className="cell" 
+				style={style}
+				onClick={() => onClick(data)}>
+			</div>
+		)
 	}
 }
 

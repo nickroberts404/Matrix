@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Cell from './Cell.js';
 import Matrix from './Matrix.js';
+import { cellStyle } from './Styles.js'
 import data from './RandomData.js';
 
 export default class App extends Component {
@@ -10,7 +11,7 @@ export default class App extends Component {
 		var cells = data.map(col => col.map(cell => {
 			return <Cell 
 				data={cell}
-				style={{}}
+				style={cellStyle}
 				onClick={data => console.log('I\'ve been clicked!')}
 				getColor={data => '#bada55'} />
 		}))

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Cell from './Cell.js';
 import Matrix from './Matrix.js';
-import { cellStyle } from './Styles.js'
+import { cellStyle } from './Styles.js';
+import color from 'color';
 import data from './RandomData.js';
 
 export default class App extends Component {
@@ -13,7 +14,7 @@ export default class App extends Component {
 				data={cell}
 				style={cellStyle}
 				onClick={data => console.log('I\'ve been clicked!')}
-				getColor={data => '#bada55'} />
+				getColor={data => color('white').mix(color('lightblue'), data.val/10).hexString()} />
 		}))
 		return cells;
 	}

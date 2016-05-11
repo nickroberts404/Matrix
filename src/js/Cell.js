@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import Radium from 'radium';
 
-export default class Cell extends Component {
+class Cell extends Component {
 	render() {
 		var {style, getColor, data, onClick} = this.props;
 		style.backgroundColor = getColor(data);
@@ -21,3 +22,4 @@ Cell.propTypes = {
 	getColor: PropTypes.func,
 }
 
+export default Radium(Cell);

@@ -1,9 +1,10 @@
 export var cellStyle = {
-	height: 10,
-	width: 10,
+	height: 30,
+	width: 30,
 	margin: 1,
+	boxSizing: 'border-box',
+	cursor: 'pointer',
 	':hover': {
-		backgroundColor: 'white'
 	}
 }
 

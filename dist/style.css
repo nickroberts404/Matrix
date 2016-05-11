@@ -6,10 +6,14 @@ html, body {
 body {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	border: 1px solid;
 }
-#reactor {
+#app {
 	display: flex;
 	flex: 1;
+	border: 1px solid;
 	flex-direction: column;
+	align-items: center;
 	justify-content: center;
 }

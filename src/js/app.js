@@ -14,7 +14,7 @@ export default class App extends Component {
 				data={cell}
 				style={cellStyle}
 				onClick={data => console.log('I\'ve been clicked!')}
-				getColor={data => color('white').mix(color('lightblue'), data.val/10).hexString()} />
+				getColor={data => color('#F36B6B').mix(color('white'), data.val/10).hexString()} />
 		}))
 		return cells;
 	}

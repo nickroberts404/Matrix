@@ -15,9 +15,9 @@ class Cell extends Component {
 }
 
 Cell.propTypes = {
-	data: PropTypes.object,
-	style: PropTypes.object,
-	onClick: PropTypes.func,
+	data: PropTypes.object, // This cell's data
+	style: PropTypes.object, // This cell's style object (can use Radium features, such as ':hover')
+	onClick: PropTypes.func, // This cell's click handler
 }
 
-export default Radium(Cell);
+export default Radium(Cell); // Wraps Cell in Radium, which extends React's inline CSS capabilities

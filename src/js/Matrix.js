@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import Cell from './Cell.js';
-import Column from './Column.js';
 import { matrixStyle, cellStyle } from './Styles.js';
+import Column from './Column.js';
+import Cell from './Cell.js';
 
 // color('#F36B6B').mix(color('white'), data.val/10).hexString()
 export default class Matrix extends Component {
@@ -10,7 +10,7 @@ export default class Matrix extends Component {
 		var { data, cellData, cellClick } = this.props; // Leaving out cellStyle because scoping issue
 		return data.map((col, i) => col.map((cell, j) => {
 			return <Cell 
-				data={cellData(cell, i, j)}
+				data={cellData(cell, i, j)} // Using i and j to denote col and row respectively
 				style={this.props.cellStyle(cellStyle, cellData(cell))}
 				onClick={cellClick} />
 		}))
@@ -27,15 +27,15 @@ export default class Matrix extends Component {
 }
 
 Matrix.propTypes = {
-	data: PropTypes.array.isRequired,
-	cellData: PropTypes.func,
-	cellStyle: PropTypes.func,
-	cellClick: PropTypes.func,
+	data: PropTypes.array.isRequired, // A 2d array of values or objects
+	cellData: PropTypes.func, // A function that determines what the cell's value will be
+	cellStyle: PropTypes.func, // A function that determines the cell's style
+	cellClick: PropTypes.func, // An event handler, triggered when cell is clicked
 }
 
 Matrix.defaultProps = {
-	cellData: (cell, col, row) => cell,
-	cellStyle: (defaultStyle, data) => defaultStyle,
-	cellClick: (data) => console.log('You clicked me!'),
+	cellData: (cell, col, row) => cell, // Returns the value at data[col][row]
+	cellStyle: (defaultStyle, data) => defaultStyle, // Return the default cell style
+	cellClick: (data) => console.log('You clicked me!'), // Log 'You clicked me!' on being clicked
 }
 

@@ -1,7 +1,8 @@
 export var cellStyle = {
 	height: 30,
 	width: 30,
-	margin: 1,
+	margin: 2,
+	backgroundColor: 'steelblue',
 	boxSizing: 'border-box',
 	cursor: 'pointer',
 	':hover': {

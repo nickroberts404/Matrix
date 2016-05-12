@@ -3,9 +3,7 @@ import Radium from 'radium';
 
 class Cell extends Component {
 	render() {
-		var {style, getColor, data, onClick} = this.props;
-		style.backgroundColor = getColor(data);
-		style.border = data.val > 0 ? 'none' : '1px solid #eee';
+		var {data, style, onClick} = this.props;
 		return (
 			<div 
 				className="cell" 
@@ -20,7 +18,6 @@ Cell.propTypes = {
 	data: PropTypes.object,
 	style: PropTypes.object,
 	onClick: PropTypes.func,
-	getColor: PropTypes.func,
 }
 
 export default Radium(Cell);
